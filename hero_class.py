@@ -10,6 +10,17 @@ class Hero:
         self.mass = 0
         self.level = 0 # goes from  0-5
 
+    def return_all_attributes(self):
+        return {"heroName": self.heroName, "age": self.age, "height": self.height, "mass": self.mass, "level": self.level}
+
+    def display_all_attributes(self):
+        print("""
+        Hero Name: {0}
+        Age:       {1}
+        Height:    {2}
+        Mass:      {3}
+        Level:     {4}
+        --------------""".format(self.heroName, self.age, self.height, self.mass, self.level))
 
 # input_number (max, min, message)  makes sure it's actually a number too and returns that
 def input_number(min_val, max_val, message):
@@ -58,7 +69,7 @@ def display_list(array):
     # loop for each array element
     for instance in array:
         # print current array element
-        print(instance)
+        instance.display_all_attributes()
 
 
 # main menu
@@ -72,12 +83,15 @@ def main():
 > """)
         # if 0 exit
         if usr_inp == 0:
+            print("exiting")
             main_run = False
         # elif 1 add a hero
         elif usr_inp == 1:
+            print("adding hero")
             add_hero()
         # elif 2 display hero (by reading the file)
         elif usr_inp == 2:
+            print("displaying: ")
             display_list(load_file("Heroes.DAT"))
             # HeoroesList = load_file("Heroes.DAT")
 
