@@ -18,13 +18,39 @@ class Hero:
 
     # elif 2 display hero (by reading the file)
 
-# add hero()
+def input_number(min_val, max_val, message):
+    valid = False
+    while not valid:
+        try:
+            inp_num = int(input(message))
+            if min_val <= inp_num <= max_val:
+                valid = True
+            else:
+                print("Please enter a number between {0} and {1}".format(min_val, max_val))
+        except ValueError:
+            print("Please enter a number")
+    return inp_num
+
+# add hero ()
+def add_hero():
     # create a new temp instance of the hero
-    # modify said hero
+    temp = Hero()
+    # modify said instance
+    temp.heroName = input("Input Hero Name: ")
+    temp.age = input_number(18, 150, "Input Age: ")
+    temp.height = input_number(0, 300, "Input Height (cm): ")
+    temp.mass = input_number(0,200, "Input Mass (kg): ")
+    temp.level = input_number(0, 5, "Input Level (0-5): ")
 
 
 
-# input_number (max, min)  makes sure it's actually a number too and returns that
+
+
+
+
+
+# input_number (max, min, message)  makes sure it's actually a number too and returns that
+
 
 # modify hero()
 
