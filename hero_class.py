@@ -15,7 +15,6 @@ class Hero:
 
     # elif 1 add a hero
 
-
     # elif 2 display hero (by reading the file)
 
 # input_number (max, min, message)  makes sure it's actually a number too and returns that
@@ -48,17 +47,23 @@ def add_hero():
     HeroMasterFile.close()  # close file
 
 
-# load file
+# load file(name of file) --> returns a list of instances?
 def load_file(file_name):
     # open file
-    HeroMasterFile = open(file_name + "DAT", )
+    HeroMasterFile = open(file_name, "rb")  # open in read binary
     # start with empty array
+    heroes = []
     # append record from file to EOL
+    heroes.append(pickle.load(HeroMasterFile))
     # return the array
+    return heroes
 
 # display array (array)
+def display_list(array_name):
     # loop for each array element
+    for instance in array_name:
         # print current array element
+        print(instance)
 
 
 

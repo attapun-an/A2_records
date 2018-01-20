@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df249620-261c-4bde-b7e8-95d5ba27285d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/testing stuff/test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/testing stuff/test.txt" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/hero_class.py" afterPath="$PROJECT_DIR$/hero_class.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +16,8 @@
       <file leaf-file-name="hero_class.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hero_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+            <state relative-caret-position="240">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,11 +77,6 @@
             <path>
               <item name="A2_records" type="b2602c69:ProjectViewProjectNode" />
               <item name="A2_records" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="A2_records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="A2_records" type="462c0819:PsiDirectoryNode" />
-              <item name="testing stuff" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -233,8 +225,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hero_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="53" column="43" lean-forward="false" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
