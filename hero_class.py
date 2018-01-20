@@ -51,6 +51,21 @@ def add_hero():
     pickle.dump(temp, HeroMasterFile)  # write temp(which is a record) to the binary file
     HeroMasterFile.close()  # close file
 
+def auto_hero_add(name, age, height, mass, level):
+    # instance temp
+    temp = Hero()
+    # modify attributes
+    temp.heroName = name
+    temp.age = age
+    temp.height = height
+    temp.mass = mass
+    temp.level = level
+    # write to file
+    HeroMasterFile = open('Heroes.DAT', 'wb')  # open file for binary write
+    pickle.dump(temp, HeroMasterFile)  # write temp(which is a record) to the binary file
+    HeroMasterFile.close()  # close file
+
+
 
 # load file(name of file) --> returns a list of instances?
 def load_file(file_name):
@@ -95,6 +110,12 @@ def main():
             display_list(load_file("Heroes.DAT"))
             # HeoroesList = load_file("Heroes.DAT")
 
-main()
 
-#def test_code():
+
+def test_code():
+    auto_hero_add("Dreadnought", 18, 170, 60, 4)
+    auto_hero_add("Bob", 30, 180, 70, 2)
+
+    display_list(load_file("Heroes.DAT"))
+
+test_code()
