@@ -10,12 +10,6 @@ class Hero:
         self.mass = 0
         self.level = 0 # goes from  0-5
 
-# main menu
-    # if 0 exit
-
-    # elif 1 add a hero
-
-    # elif 2 display hero (by reading the file)
 
 # input_number (max, min, message)  makes sure it's actually a number too and returns that
 def input_number(min_val, max_val, message):
@@ -58,15 +52,35 @@ def load_file(file_name):
     # return the array
     return heroes
 
+
 # display array (array)
-def display_list(array_name):
+def display_list(array):
     # loop for each array element
-    for instance in array_name:
+    for instance in array:
         # print current array element
         print(instance)
 
 
+# main menu
+def main():
+    main_run = True
+    while main_run:
+        usr_inp = input_number(0, 2, """
+0 - exit
+1 - add hero
+2 - display
+> """)
+        # if 0 exit
+        if usr_inp == 0:
+            main_run = False
+        # elif 1 add a hero
+        elif usr_inp == 1:
+            add_hero()
+        # elif 2 display hero (by reading the file)
+        elif usr_inp == 2:
+            display_list(load_file("Heroes.DAT"))
+            # HeoroesList = load_file("Heroes.DAT")
 
+main()
 
-
-
+#def test_code():
