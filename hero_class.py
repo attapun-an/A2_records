@@ -18,6 +18,7 @@ class Hero:
 
     # elif 2 display hero (by reading the file)
 
+# input_number (max, min, message)  makes sure it's actually a number too and returns that
 def input_number(min_val, max_val, message):
     valid = False
     while not valid:
@@ -31,32 +32,35 @@ def input_number(min_val, max_val, message):
             print("Please enter a number")
     return inp_num
 
-# add hero ()
+
 def add_hero():
-    # create a new temp instance of the hero
+    # create a new temp instance of
     temp = Hero()
     # modify said instance
     temp.heroName = input("Input Hero Name: ")
     temp.age = input_number(18, 150, "Input Age: ")
     temp.height = input_number(0, 300, "Input Height (cm): ")
-    temp.mass = input_number(0,200, "Input Mass (kg): ")
+    temp.mass = input_number(0, 200, "Input Mass (kg): ")
     temp.level = input_number(0, 5, "Input Level (0-5): ")
+    # write to the file
+    HeroMasterFile = open('Heroes.DAT', 'wb')  # open file for binary write
+    pickle.dump(temp, HeroMasterFile)  # write temp(which is a record) to the binary file
+    HeroMasterFile.close()  # close file
 
 
+# load file
+def load_file(file_name):
+    # open file
+    HeroMasterFile = open(file_name + "DAT", )
+    # start with empty array
+    # append record from file to EOL
+    # return the array
+
+# display array (array)
+    # loop for each array element
+        # print current array element
 
 
-
-
-
-
-# input_number (max, min, message)  makes sure it's actually a number too and returns that
-
-
-# modify hero()
-
-# load the file
-
-# display said file
 
 
 
