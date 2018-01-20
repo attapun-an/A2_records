@@ -47,7 +47,7 @@ def add_hero():
     temp.mass = input_number(0, 200, "Input Mass (kg): ")
     temp.level = input_number(0, 5, "Input Level (0-5): ")
     # write to the file
-    HeroMasterFile = open('Heroes.DAT', 'wb')  # open file for binary write
+    HeroMasterFile = open('Heroes.DAT', 'ab')  # open file for binary write
     pickle.dump(temp, HeroMasterFile)  # write temp(which is a record) to the binary file
     HeroMasterFile.close()  # close file
 
@@ -61,7 +61,7 @@ def auto_hero_add(name, age, height, mass, level):
     temp.mass = mass
     temp.level = level
     # write to file
-    HeroMasterFile = open('Heroes.DAT', 'wb')  # open file for binary write
+    HeroMasterFile = open('Heroes.DAT', 'ab')  # open file for binary write
     pickle.dump(temp, HeroMasterFile)  # write temp(which is a record) to the binary file
     HeroMasterFile.close()  # close file
 
@@ -74,7 +74,8 @@ def load_file(file_name):
     # start with empty array
     heroes = []
     # append record from file to EOL
-    heroes.append(pickle.load(HeroMasterFile))
+    while True: #check for the end of file YOU FORGOT TO INCLUDE THIS BAKA. MEOW.
+        heroes.append(pickle.load(HeroMasterFile))
     # return the array
     return heroes
 
