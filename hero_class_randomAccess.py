@@ -3,7 +3,7 @@ import pickle # library required to create binary files
 class Hero:
 
     def __init__(self): # constructor
-        # self.heroID = ""
+        self.heroID = ""
         self.heroName = ""
         self.age = 0
         self.height = 0
@@ -15,12 +15,13 @@ class Hero:
 
     def display_all_attributes(self):
         print("""
+        Hero ID:   {5}
         Hero Name: {0}
         Age:       {1}
         Height:    {2}
         Mass:      {3}
         Level:     {4}
-        --------------""".format(self.heroName, self.age, self.height, self.mass, self.level))
+        --------------""".format(self.heroName, self.age, self.height, self.mass, self.level, self.heroID))
 
 # input_number (max, min, message)  makes sure it's actually a number too and returns that
 def input_number(min_val, max_val, message):
@@ -41,15 +42,17 @@ def add_hero():
     # create a new temp instance of
     temp = Hero()
     # modify said instance
+    temp.heroID = input("Input Hero ID: ")
     temp.heroName = input("Input Hero Name: ")
     temp.age = input_number(18, 150, "Input Age: ")
     temp.height = input_number(0, 300, "Input Height (cm): ")
     temp.mass = input_number(0, 200, "Input Mass (kg): ")
     temp.level = input_number(0, 5, "Input Level (0-5): ")
     # write to the file
-    HeroMasterFile = open('Heroes.DAT', 'ab')  # open file for binary write
-    pickle.dump(temp, HeroMasterFile)  # write temp(which is a record) to the binary file
-    HeroMasterFile.close()  # close file
+    here_master_file = open(file_name, "rb+")  # open in read binary plus
+    address = hash(temp)
+    here_master_file(address)
+    pickle.dump(temp)
 
 def auto_hero_add(name, age, height, mass, level):
     # instance temp
@@ -70,22 +73,8 @@ def auto_hero_add(name, age, height, mass, level):
 # load file(name of file) --> returns a list of instances?
 def load_file(file_name):
     # open file
-    HeroMasterFile = open(file_name, "rb")  # open in read binary
-    # start with empty array
-    heroes = []
-    # append record from file to EOL
-    while True: #check for the end of file YOU FORGOT TO INCLUDE THIS BAKA. MEOW.
-        heroes.append(pickle.load(HeroMasterFile))
-    # return the array
-    return heroes
 
 
-# display array (array)
-def display_list(array):
-    # loop for each array element
-    for instance in array:
-        # print current array element
-        instance.display_all_attributes()
 
 
 # main menu
@@ -107,7 +96,7 @@ def main():
             add_hero()
         # elif 2 display hero (by reading the file)
         elif usr_inp == 2:
-            print("displaying: ")
+            print(hero_class.py"displaying: ")
             display_list(load_file("Heroes.DAT"))
             # HeoroesList = load_file("Heroes.DAT")
 
@@ -119,5 +108,4 @@ def test_code():
 
     display_list(load_file("Heroes.DAT"))
 
-# test_code()
-main()
+test_code()
