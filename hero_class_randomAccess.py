@@ -49,15 +49,17 @@ def add_hero():
     temp.mass = input_number(0, 200, "Input Mass (kg): ")
     temp.level = input_number(0, 5, "Input Level (0-5): ")
     # write to the file
-    here_master_file = open(file_name, "rb+")  # open in read binary plus
-    address = hash(temp)
-    here_master_file(address)
+    hero_master_file = open(file_name, "rb+")  # open in read binary plus
+    address = hash(temp.heroID)
+    hero_master_file.seek(address)
     pickle.dump(temp)
+    hero_master_file.close()
 
-def auto_hero_add(name, age, height, mass, level):
+def auto_hero_add(heroID ,name, age, height, mass, level):
     # instance temp
     temp = Hero()
     # modify attributes
+    temp.heroID = input("Input Hero ID: ")
     temp.heroName = name
     temp.age = age
     temp.height = height
@@ -71,9 +73,19 @@ def auto_hero_add(name, age, height, mass, level):
 
 
 # load file(name of file) --> returns a list of instances?
-def load_file(file_name):
-    # open file
+def load_file(file_name, heroID):
+    hero_master_file = open(file_name, 'rb')
+    address = hash(heroID)
+    hero_master_file.seek(address)
+    hero_record = pickle.load(hero_master_file)
+    hero_record.display_all_attributes()
 
+# display array (array)
+def display_list(array):
+    # loop for each array element
+    for instance in array:
+        # print current array element
+        instance.display_all_attributes()
 
 
 
@@ -96,16 +108,16 @@ def main():
             add_hero()
         # elif 2 display hero (by reading the file)
         elif usr_inp == 2:
-            print(hero_class.py"displaying: ")
+            print("displaying: ")
             display_list(load_file("Heroes.DAT"))
             # HeoroesList = load_file("Heroes.DAT")
 
 
 
 def test_code():
-    auto_hero_add("Dreadnought", 18, 170, 60, 4)
-    auto_hero_add("Bob", 30, 180, 70, 2)
+    auto_hero_add("11", "Dreadnought", 18, 170, 60, 4)
+    auto_hero_add("12", "Bob", 30, 180, 70, 2)
 
-    display_list(load_file("Heroes.DAT"))
+    display_list(load_file("Heroes.DAT", "11"))
 
 test_code()
