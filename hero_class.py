@@ -75,10 +75,12 @@ def load_file(file_name):
     heroes = []
     # append record from file to EOL
     while True: #check for the end of file YOU FORGOT TO INCLUDE THIS BAKA. MEOW.
-        heroes.append(pickle.load(HeroMasterFile))
+        heroes.append(pickle.load(HeroMasterFile))  # have this outside the array. (load it before hand)
     # return the array
     return heroes
 
+    # Feedback - you actually have to use readlines to extract each line first so
+    # you don't have to deal with end of files
 
 # display array (array)
 def display_list(array):
@@ -119,5 +121,5 @@ def test_code():
 
     display_list(load_file("Heroes.DAT"))
 
-# test_code()
-main()
+test_code()
+# main()
