@@ -59,7 +59,7 @@ def auto_hero_add(heroID ,name, age, height, mass, level):
     # instance temp
     temp = Hero()
     # modify attributes
-    temp.heroID = input("Input Hero ID: ")
+    temp.heroID = heroID
     temp.heroName = name
     temp.age = age
     temp.height = height

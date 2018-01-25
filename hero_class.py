@@ -69,18 +69,23 @@ def auto_hero_add(name, age, height, mass, level):
 
 # load file(name of file) --> returns a list of instances?
 def load_file(file_name):
-    # open file
-    HeroMasterFile = open(file_name, "rb")  # open in read binary
     # start with empty array
     heroes = []
-    # append record from file to EOL
-    while True: #check for the end of file YOU FORGOT TO INCLUDE THIS BAKA. MEOW.
-        heroes.append(pickle.load(HeroMasterFile))  # have this outside the array. (load it before hand)
-    # return the array
-    return heroes
+    # open file
+    # CODE PARAPHRASED FROM STACK OVERFLOW
+    with open(file_name, "rb") as HeroMasterFile:
+        while True:
+            try:
+                yield pickle.load(HeroMasterFile)
+            except EOFError:
+                break
 
-    # Feedback - you actually have to use readlines to extract each line first so
+
+    # Feedback - you actually have to use readline to extract each line first so
     # you don't have to deal with end of files
+
+    # if we actually wanted to do this in real life - we would use libraries
+    # we're just learning the theory
 
 # display array (array)
 def display_list(array):
@@ -119,7 +124,9 @@ def test_code():
     auto_hero_add("Dreadnought", 18, 170, 60, 4)
     auto_hero_add("Bob", 30, 180, 70, 2)
 
-    display_list(load_file("Heroes.DAT"))
+    # display_list(load_file("Heroes.DAT"))
+    items = load_file("Heroes.DAT")
+    print(items)
 
 test_code()
 # main()
